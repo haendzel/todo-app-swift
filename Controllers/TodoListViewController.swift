@@ -10,7 +10,7 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     
-    var itemArray = [Item]()
+    var itemArray = [Item]() //custom objects
     
     let defaults = UserDefaults.standard
 
@@ -19,17 +19,14 @@ class TodoListViewController: UITableViewController {
         
         let newItem = Item()
         newItem.title = "Maszeczka"
-        newItem.done = true
         itemArray.append(newItem)
         
         let newItem2 = Item()
         newItem2.title = "Maszeńka"
-        newItem2.done = true
         itemArray.append(newItem2)
         
         let newItem3 = Item()
         newItem3.title = "Chruptusia"
-        newItem3.done = false
         itemArray.append(newItem3)
         
 //        for i in 1...90 {
@@ -100,7 +97,7 @@ class TodoListViewController: UITableViewController {
         
         let alert = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
     
-        let action = UIAlertAction(title: "Add item", style: .default) { (action) in
+        let action = UIAlertAction(title: "Add task", style: .default) { (action) in
             //what will happen once he user clicks the Add Item button
             
             let newItem = Item()
@@ -111,7 +108,9 @@ class TodoListViewController: UITableViewController {
             self.defaults.set(self.itemArray, forKey: "TodoListArray")
             
             self.tableView.reloadData()
-    }
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     
     alert.addAction(action)
         alert.addTextField { (alertTextField) in
@@ -123,3 +122,5 @@ class TodoListViewController: UITableViewController {
     }
 }
 
+
+//userDefaults better use with settings volume, brightness etc for example
