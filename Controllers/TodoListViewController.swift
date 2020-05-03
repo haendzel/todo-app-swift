@@ -13,13 +13,12 @@ class TodoListViewController: UITableViewController {
     
     var itemArray = [Item]() //custom objects
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        searchBar.delegate = self
         loadItems()
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - TableView Datasource Methods
@@ -127,5 +126,12 @@ class TodoListViewController: UITableViewController {
     }
 }
 
+//MARK: - Search bar methods
 
-//userDefaults better use with settings volume, brightness etc for example
+extension TodoListViewController : UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        print(searchBar.text!)
+       }
+}
