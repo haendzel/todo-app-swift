@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="TodoApp">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+    </entity>
     <entity name="Item" representedClassName=".Item" syncable="YES" codeGenerationType="class">
         <attribute name="done" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Item" positionX="-11370.6171875" positionY="-4604.74609375" width="190.51953125" height="73"/>
+        <element name="Category" positionX="-11637.24609375" positionY="-4663.296875" width="209.9375" height="58"/>
     </elements>
 </model>
